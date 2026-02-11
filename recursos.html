@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Nosotros | Misión San Pablo Apóstol</title>
+    <title>Recursos | Misión San Pablo Apóstol</title>
     <meta name="description"
-        content="Conoce más sobre Misión San Pablo Apóstol: quiénes somos, nuestra misión, visión y congregación." />
+        content="Recursos digitales: sermones, predicaciones, estudios bíblicos y podcasts para edificación en la fe." />
 
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" href="img/favicon.png" />
@@ -16,12 +16,11 @@
 <body>
 
     <!-- ==================================================
-         ENCABEZADO PRINCIPAL (LOGO + NAVEGACIÓN)
-         ================================================== -->
+     ENCABEZADO PRINCIPAL (LOGO + NAVEGACIÓN)
+     ================================================== -->
     <header class="mspa-header">
         <div class="container">
 
-            <!-- Identidad visual -->
             <div class="brand-center">
                 <img class="logo" src="img/logo.png" alt="Logo de Misión San Pablo Apóstol" />
                 <div class="brand-text">
@@ -30,12 +29,11 @@
                 </div>
             </div>
 
-            <!-- Menú principal -->
             <nav class="pill-nav" aria-label="Navegación principal">
                 <a class="pill" href="index.html">HOME</a>
 
                 <div class="nav-drop">
-                    <a class="pill active" href="nosotros.html" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
+                    <a class="pill" href="nosotros.html" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
                     <div class="drop-menu" role="menu" aria-label="Submenú Nosotros">
                         <a href="nuestra-fe.html" role="menuitem">NUESTRA FE</a>
                         <a href="nuestra-iglesia.html" role="menuitem">NUESTRA IGLESIA</a>
@@ -44,7 +42,7 @@
                 </div>
 
                 <div class="nav-drop">
-                    <a class="pill" href="recursos.html" aria-haspopup="true" aria-expanded="false">RECURSOS</a>
+                    <a class="pill active" href="recursos.html" aria-haspopup="true" aria-expanded="false">RECURSOS</a>
                     <div class="drop-menu" role="menu" aria-label="Submenú Recursos">
                         <a href="devocionales.html" role="menuitem">Devocionales</a>
                     </div>
@@ -57,80 +55,101 @@
         </div>
     </header>
 
-    <!-- ==================================================
-         CONTENIDO PRINCIPAL
-         ================================================== -->
     <main>
 
         <!-- ==================================================
-             HERO
-             ================================================== -->
-        <section class="page-hero" style="background-image: url('img/hero2.jpg');">
+       HERO
+       ================================================== -->
+        <section class="page-hero" style="background-image: url('img/hero5.jpg');">
             <div class="page-hero-overlay"></div>
 
             <div class="container">
                 <div class="page-hero-inner">
-                    <h1 class="page-hero-title">NOSOTROS</h1>
-
-                    <p class="page-hero-text">
-                        En "Misión San Pablo Apóstol," somos una congregación<br />
-                        conservadora y confesional, libre y viviente.
-                    </p>
+                    <h1 class="page-hero-title">RECURSOS DIGITALES</h1>
                 </div>
             </div>
         </section>
 
         <!-- ==================================================
-             3 COLUMNAS: MISIÓN / VISIÓN / CONGREGACIÓN
-             ================================================== -->
-        <section class="triple-info">
+       CARRUSEL DE RECURSOS
+       ================================================== -->
+        <section class="resources-carousel">
             <div class="container">
-                <div class="triple-grid">
 
-                    <article class="triple-card">
-                        <h2 class="triple-title">NUESTRA MISIÓN</h2>
-                        <div class="triple-underline"></div>
-                        <p class="triple-text">
-                            Hacer discípulos a las naciones yendo, bautizando en el Nombre del Padre,
-                            y del Hijo, y del Espíritu Santo, y enseñando todas las cosas que Jesús nos ha mandado.
-                            <br /><br />
-                            <span class="triple-ref">(Mt. 28:18-19)</span>
-                        </p>
-                    </article>
+                <div class="carousel" data-carousel>
 
-                    <article class="triple-card">
-                        <h2 class="triple-title">NUESTRA VISIÓN</h2>
-                        <div class="triple-underline"></div>
-                        <p class="triple-text">
-                            Que todos conozcan a DIOS, el único Dios verdadero; que confiesen que Jesús es el Señor
-                            y crean que Dios le levantó de los muertos, para que todo aquel que en Él crea
-                            no se pierda más tenga vida eterna.
-                            <br /><br />
-                            <span class="triple-ref">(Jn. 3:16; Ro. 10:9; 13:16)</span>
-                        </p>
-                    </article>
+                    <button class="carousel-arrow prev" type="button" aria-label="Anterior" data-action="prev">
+                        ‹
+                    </button>
 
-                    <article class="triple-card">
-                        <h2 class="triple-title">NUESTRA<br />CONGREGACIÓN</h2>
-                        <div class="triple-underline"></div>
-                        <p class="triple-text">
-                            La Congregación Luterana Libre "Misión San Pablo Apóstol" es un nuevo trabajo
-                            misionero en la ciudad de León (Gto) que busca traer almas a los pies de Jesús.
-                        </p>
-                    </article>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track" data-carousel-track>
+
+                            <!-- Slide 1 -->
+                            <article class="carousel-slide is-active" data-carousel-slide>
+                                <h2 class="carousel-title">SERMONES Y ESTUDIOS BÍBLICOS</h2>
+                                <div class="carousel-divider" aria-hidden="true"></div>
+
+                                <p class="carousel-text">
+                                    En la Misión San Pablo Apóstol, nos interesa mucho que puedas escuchar la Palabra
+                                    del Señor.
+                                    Es por eso que ponemos a tu disposición nuestras predicaciones y estudios bíblicos
+                                    los cuales
+                                    puedes encontrar en nuestra página de YouTube.
+                                    <br />
+                                    ¡Suscríbete a nuestro canal y compártelo con tus seres queridos!
+                                </p>
+
+                                <a class="carousel-cta" href="#" target="_blank" rel="noopener">
+                                    Visitar &gt;&gt;&gt;
+                                </a>
+                            </article>
+
+                            <!-- Slide 2 -->
+                            <article class="carousel-slide" data-carousel-slide>
+                                <h2 class="carousel-title">ESTUDIOS BÍBLICOS</h2>
+                                <div class="carousel-divider" aria-hidden="true"></div>
+
+                                <p class="carousel-text">
+                                    ¿Te gustan los podcasts?
+                                    <br />
+                                    La Misión San Pablo Apóstol lanzó un Estudio Bíblico meditando en los primeros
+                                    capítulos de 1ª Pedro,
+                                    los cuales podrás encontrar en formato podcast en Spotify.
+                                    <br />
+                                    ¡Escúchalo sin interrumpir tus actividades!
+                                </p>
+
+                                <a class="carousel-cta" href="#" target="_blank" rel="noopener">
+                                    Visitar &gt;&gt;&gt;
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-arrow next" type="button" aria-label="Siguiente" data-action="next">
+                        ›
+                    </button>
+
+                    <div class="carousel-dots" role="tablist" aria-label="Paginación del carrusel">
+                        <button class="dot is-active" type="button" aria-label="Ir al slide 1"
+                            data-carousel-dot="0"></button>
+                        <button class="dot" type="button" aria-label="Ir al slide 2" data-carousel-dot="1"></button>
+                    </div>
 
                 </div>
+
             </div>
         </section>
 
     </main>
 
     <!-- ==================================================
-         PIE DE PÁGINA
-         ================================================== -->
+     PIE DE PÁGINA
+     ================================================== -->
     <footer class="site-footer">
 
-        <!-- Contenido principal del footer -->
         <div class="site-footer-main">
             <div class="container">
                 <div class="footer-grid">
@@ -149,9 +168,9 @@
                     <section class="footer-col footer-contact">
                         <h4 class="footer-title">CONTACTO</h4>
                         <p class="footer-text">
-                            <strong>Tel:</strong> <a class="footer-contact-item" href="tel:+524772467436">
-                                477 246 7436</a><br /><br />
-
+                            <strong>Tel:</strong> <a class="footer-contact-item" href="tel:+524772467436">477 246
+                                7436</a>
+                            <br /><br />
                             <strong>Email:</strong><br />
                             <a class="footer-contact-item"
                                 href="mailto:sanpabloapostol.mision@gmail.com">sanpabloapostol.mision@gmail.com</a><br />
@@ -200,7 +219,6 @@
             </div>
         </div>
 
-        <!-- Línea inferior -->
         <div class="site-footer-bottom">
             <div class="container">
                 <div class="footer-bottom-text">
