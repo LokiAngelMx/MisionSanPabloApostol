@@ -33,8 +33,23 @@
             <!-- Menú principal -->
             <nav class="pill-nav" aria-label="Navegación principal">
                 <a class="pill active" href="index.html">HOME</a>
-                <a class="pill" href="nosotros.html">NOSOTROS</a>
-                <a class="pill" href="recursos.html">RECURSOS</a>
+
+                <div class="nav-drop">
+                    <a class="pill" href="nosotros.html" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
+                    <div class="drop-menu" role="menu" aria-label="Submenú Nosotros">
+                        <a href="nuestra-fe.html" role="menuitem">NUESTRA FE</a>
+                        <a href="nuestra-iglesia.html" role="menuitem">NUESTRA IGLESIA</a>
+                        <a href="quienes-somos.html" role="menuitem">¿QUIÉNES SOMOS?</a>
+                    </div>
+                </div>
+
+                <div class="nav-drop">
+                    <a class="pill" href="recursos.html" aria-haspopup="true" aria-expanded="false">RECURSOS</a>
+                    <div class="drop-menu" role="menu" aria-label="Submenú Recursos">
+                        <a href="devocionales.html" role="menuitem">Devocionales</a>
+                    </div>
+                </div>
+
                 <a class="pill" href="calendario.html">CALENDARIO</a>
                 <a class="pill" href="contacto.html">CONTACTO</a>
             </nav>
@@ -190,28 +205,28 @@
 
                         <ul class="footer-social-list">
                             <li>
-                                <a class="footer-social-item" href="#">
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
                                     <img src="img/icons/facebook.png" alt="Facebook" class="footer-social-icon" />
                                     <span>Misión San Pablo Apóstol</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a class="footer-social-item" href="#">
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
                                     <img src="img/icons/youtube.png" alt="YouTube" class="footer-social-icon" />
                                     <span>Misión San Pablo Apóstol</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a class="footer-social-item" href="#">
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
                                     <img src="img/icons/instagram.png" alt="Instagram" class="footer-social-icon" />
                                     <span>@sanpabloapostol.mision</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a class="footer-social-item" href="#">
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
                                     <img src="img/icons/spotify.png" alt="Spotify" class="footer-social-icon" />
                                     <span>"Meditando las Escrituras" Luterana Libre</span>
                                 </a>
@@ -238,6 +253,9 @@
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+
+    <!-- Script de navegación -->
+    <script src="js/app.js"></script>
 
 </body>
 

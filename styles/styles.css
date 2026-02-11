@@ -1,26 +1,30 @@
-/* ===========================
-   BASE / RESET
-   =========================== */
+/* ==================================================
+   VARIABLES GLOBALES
+   ================================================== */
 
 :root {
+  --bg: #ffffff;
+  --text: #1b1f2a;
+
+  --dark: #0b0f14;
+  --dark-2: #141a20;
+  --dark-3: #070a0e;
+
+  --accent: #123b7a;
+  --border-dark: rgba(255, 255, 255, 0.12);
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   --max: 1100px;
-
-  --text: #111;
-  --muted: #444;
-
-  --border: #d9d9d9;
-  --pill-border: #bdbdbd;
-
-  --accent: #7b2f2f;
-  --accent-2: #b34a4a;
-
-  --footer-bg: #2f2f2f;
-  --footer-bg-2: #242424;
 }
+
+/* ==================================================
+   RESET BÁSICO
+   ================================================== */
 
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -28,7 +32,14 @@ body {
 }
 
 body {
-  background: #fff;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
@@ -37,6 +48,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 img {
   max-width: 100%;
   display: block;
@@ -47,13 +59,14 @@ img {
   margin: 0 auto;
 }
 
-/* ===========================
-   HEADER (LOGO + NAV)
-   =========================== */
+/* ==================================================
+   HEADER
+   ================================================== */
 
 .mspa-header {
-  padding: 18px 0 8px 0;
-  background: #fff;
+  background: var(--dark-2);
+  padding: 18px 0 10px 0;
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .brand-center {
@@ -79,24 +92,29 @@ img {
 
 .brand-top {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.1;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .brand-main {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
-  letter-spacing: 0.02em;
   font-weight: 700;
-  line-height: 1.15;
+  letter-spacing: 0.08em;
+  color: #fff;
 }
 
+/* ==================================================
+   NAVEGACIÓN + DROPDOWN
+   ================================================== */
+
 .pill-nav {
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 8px 0 0 0;
+  padding-top: 8px;
 }
 
 .pill {
@@ -104,57 +122,109 @@ img {
   font-size: 13px;
   padding: 6px 18px;
   border-radius: 999px;
-  background: linear-gradient(#f2f2f2, #dcdcdc);
-  border: 1px solid var(--pill-border);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
-  color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  background: transparent;
   text-transform: uppercase;
 }
 
-.pill.active {
-  background: linear-gradient(#ededed, #cfcfcf);
-  border-color: #b0b0b0;
-}
-
 .pill:hover {
-  filter: brightness(0.98);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* ===========================
-   HERO (IMAGEN FIJA + TEXTO)
-   =========================== */
+.pill.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.nav-drop {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.drop-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+
+  padding: 6px;
+  display: none;
+  z-index: 999;
+}
+
+.drop-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.12));
+}
+
+.drop-menu a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.drop-menu a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.nav-drop:hover .drop-menu {
+  display: block;
+}
+
+.nav-drop.open .drop-menu {
+  display: block;
+}
+
+/* ==================================================
+   HERO
+   ================================================== */
 
 .hero-wrap {
-  padding: 14px 0 8px 0;
+  padding: 14px 0;
 }
 
 .hero-frame {
   position: relative;
-  border: 1px solid #000;
-  background: #000;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-}
-
-.hero-single {
-  position: relative;
   height: clamp(320px, 52vh, 520px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.hero-single > img {
+.hero-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    900px 420px at 50% 55%,
-    rgba(0, 0, 0, 0.18),
-    rgba(0, 0, 0, 0.55)
+    1000px 480px at 50% 55%,
+    rgba(18, 59, 122, 0.22),
+    rgba(0, 0, 0, 0.65)
   );
 }
 
@@ -163,33 +233,33 @@ img {
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
   padding: 18px;
+  text-align: center;
   color: #fff;
 }
 
 .hero-small {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 26px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+  font-size: 22px;
   margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
 .hero-title {
   font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.6vw, 60px);
   font-weight: 300;
-  font-size: clamp(34px, 4.6vw, 62px);
   line-height: 1.06;
   margin: 0;
   letter-spacing: 0.01em;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
 }
 
-/* ===========================
-   HOME: BIENVENIDA + 3 CARDS
-   =========================== */
+/* ==================================================
+   BIENVENIDA
+   ================================================== */
 
 .home-welcome {
   padding: 38px 0 60px 0;
@@ -201,58 +271,49 @@ img {
   letter-spacing: 0.22em;
   font-size: 18px;
   margin: 0 0 18px 0;
+  color: var(--accent);
 }
 
 .home-welcome-text {
   max-width: 86ch;
   margin: 0 auto 42px auto;
   text-align: center;
-  color: #4a4a4a;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.85;
-}
-
-.home-welcome-text strong em {
-  font-weight: 700;
-  font-style: italic;
-  color: #2c2c2c;
+  color: #444;
 }
 
 .home-welcome-text .caps {
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2c2c2c;
   font-size: 12px;
 }
+
+/* ==================================================
+   CARDS
+   ================================================== */
 
 .home-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 46px;
-  align-items: start;
   justify-items: center;
-  padding-top: 10px;
 }
 
 .home-card {
-  width: 100%;
   max-width: 290px;
   text-align: center;
 }
 
 .home-card-img {
-  width: 100%;
   height: 170px;
   overflow: hidden;
-  background: #eee;
 }
 
 .home-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .home-card-title {
@@ -260,56 +321,43 @@ img {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
   letter-spacing: 0.26em;
-  font-weight: 500;
-  color: #222;
 }
 
 .home-card-underline {
   width: 44px;
   height: 2px;
-  background: var(--accent-2);
+  background: var(--accent);
   margin: 0 auto 18px auto;
-  opacity: 0.75;
 }
 
 .home-card-text {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
   line-height: 1.9;
-  color: #3a3a3a;
   margin: 0 0 22px 0;
 }
 
 .home-card-more {
-  display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   letter-spacing: 0.12em;
-  color: var(--accent-2);
   text-transform: uppercase;
+  color: var(--accent);
 }
 
 .home-card-more:hover {
   text-decoration: underline;
 }
 
-/* ===========================
+/* ==================================================
    IMAGE BANNER
-   =========================== */
+   ================================================== */
 
 .image-banner {
   position: relative;
-  width: 100%;
   height: 420px;
-  margin-top: 24px;
-  overflow: hidden;
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
   background-attachment: fixed;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,33 +366,26 @@ img {
 .image-banner-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.58);
-  z-index: 0;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .image-banner-content {
   position: relative;
-  z-index: 1;
   text-align: center;
-  max-width: 900px;
   padding: 0 18px;
 }
 
 .image-banner-title {
-  margin: 0 0 12px 0;
   font-family: Georgia, "Times New Roman", serif;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
   font-size: 22px;
-  line-height: 1.35;
+  letter-spacing: 0.22em;
+  margin: 0 0 12px 0;
   color: var(--accent);
 }
 
 .image-banner-text {
-  margin: 0 0 18px 0;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
-  color: #222;
+  margin: 0 0 18px 0;
 }
 
 .image-banner-btn {
@@ -352,22 +393,17 @@ img {
   padding: 14px 54px;
   background: var(--accent);
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-/* ===========================
+/* ==================================================
    FOOTER
-   =========================== */
-
-.site-footer {
-  margin-top: 0;
-}
+   ================================================== */
 
 .site-footer-main {
-  background: var(--footer-bg);
+  background: var(--dark);
   padding: 44px 0 34px 0;
 }
 
@@ -375,44 +411,28 @@ img {
   display: grid;
   grid-template-columns: 1fr 1px 1fr 1px 1fr;
   gap: 26px;
-  align-items: start;
 }
 
 .footer-divider {
   width: 1px;
-  background: rgba(255, 255, 255, 0.14);
-  height: 170px;
-  justify-self: center;
-  margin-top: 18px;
-}
-
-.footer-col {
-  color: rgba(255, 255, 255, 0.82);
-  text-align: center;
+  background: var(--border-dark);
 }
 
 .footer-title {
-  margin: 0 0 18px 0;
-  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
   font-size: 14px;
   letter-spacing: 0.26em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 18px 0;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .footer-text {
-  margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
   line-height: 1.8;
+  text-align: center;
   color: rgba(255, 255, 255, 0.75);
-  font-weight: 600;
-}
-
-.footer-contact strong {
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 700;
+  margin: 0;
 }
 
 .footer-social-list {
@@ -428,11 +448,8 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  justify-content: center;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-social-item:hover {
@@ -443,48 +460,36 @@ img {
 .footer-social-icon {
   width: 18px;
   height: 18px;
-  object-fit: contain;
-  display: block;
   opacity: 0.9;
 }
 
-.footer-social-item:hover .footer-social-icon {
-  opacity: 1;
-}
-
 .site-footer-bottom {
-  background: var(--footer-bg-2);
+  background: var(--dark-3);
   padding: 16px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border-dark);
 }
 
 .footer-bottom-text {
   text-align: center;
-  color: rgba(255, 255, 255, 0.38);
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
 }
 
-/* ===========================
+/* ==================================================
    RESPONSIVE
-   =========================== */
+   ================================================== */
 
 @media (max-width: 980px) {
   .home-cards {
     grid-template-columns: 1fr;
     gap: 34px;
   }
-  .home-card {
-    max-width: 520px;
-  }
-  .home-card-img {
-    height: 220px;
-  }
 
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
   .footer-divider {
     display: none;
   }
@@ -492,11 +497,5 @@ img {
   .image-banner {
     background-attachment: scroll;
     height: 380px;
-  }
-}
-
-@media (max-width: 700px) {
-  .hero-small {
-    font-size: 18px;
   }
 }
