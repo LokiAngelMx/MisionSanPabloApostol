@@ -55,7 +55,7 @@ img {
   margin: 0 auto;
 }
 
-/* Focus visible (accesibilidad) */
+/* Accesibilidad */
 :focus-visible {
   outline: 3px solid rgba(123, 47, 47, 0.35);
   outline-offset: 3px;
@@ -140,14 +140,14 @@ img {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Wrapper dropdown */
+/* Dropdown wrapper */
 .nav-drop {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-/* “Puente” invisible para que NO se cierre al bajar el cursor */
+/* “Puente” invisible para evitar cierre al bajar el cursor */
 .nav-drop::after {
   content: "";
   position: absolute;
@@ -210,14 +210,14 @@ img {
   font-weight: 700;
 }
 
-/* Desktop: hover */
+/* Desktop hover */
 @media (hover: hover) and (pointer: fine) {
   .nav-drop:hover .drop-menu {
     display: block;
   }
 }
 
-/* Estado abierto por JS (móvil / click) */
+/* Estado abierto por JS (móvil/click) */
 .nav-drop.open .drop-menu {
   display: block;
 }
@@ -284,7 +284,7 @@ img {
 }
 
 /* ==================================================
-   PAGE HERO (NOSOTROS / RECURSOS / INDEX NUEVO)
+   PAGE HERO (NOSOTROS / INDEX NUEVO)
    ================================================== */
 .page-hero {
   position: relative;
@@ -606,8 +606,7 @@ img {
 }
 
 /* ==================================================
-   CONTENEDOR DE CONTENIDO “LARGO”
-   (NUESTRA FE / IGLESIA / QUIÉNES SOMOS / DEVOCIONALES)
+   CONTENIDO “LARGO” (FE / IGLESIA / QUIÉNES SOMOS / DEVOCIONALES)
    ================================================== */
 .faith-content {
   padding: 80px 0 100px;
@@ -637,7 +636,7 @@ img {
   margin-bottom: 18px;
 }
 
-/* Quiénes Somos (texto largo + logo al final) */
+/* Quiénes Somos (texto largo + logo) */
 .doc-block {
   max-width: 920px;
   margin: 0 auto;
@@ -736,7 +735,6 @@ img {
   color: #fff;
 }
 
-/* Flechas: área clickeable correcta */
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -870,12 +868,7 @@ img {
 
 /* ==================================================
    DEVOCIONAL INDIVIDUAL (devocional-1.html, -2, etc.)
-   IMPORTANTÍSIMO:
-   - Estas clases existen en tu HTML del post
-   - Aquí les damos el look “bonito” y consistente
    ================================================== */
-
-/* Barra superior con botón regresar */
 .post-topbar {
   max-width: 980px;
   margin: 0 auto 14px;
@@ -902,13 +895,13 @@ img {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* Card principal del post */
+/* Card principal */
 .devo-card--full {
   max-width: 980px;
   margin: 0 auto;
 }
 
-/* Imagen superior del post (controlamos altura para que NO se vea gigante) */
+/* Imagen del post */
 .devo-card-img {
   display: block;
   width: 100%;
@@ -926,7 +919,6 @@ img {
   object-fit: cover;
 }
 
-/* Cuerpo del post */
 .devo-card-body {
   padding: 20px 22px 24px;
 }
@@ -956,7 +948,7 @@ img {
   font-size: clamp(22px, 2.1vw, 30px);
 }
 
-/* Contenido del devocional: aquí arreglamos lo “pegado” y line-height */
+/* Contenido */
 .devo-post-content {
   margin-top: 14px;
   font-family: var(--serif);
@@ -971,10 +963,6 @@ img {
   margin: 0 0 18px;
 }
 
-.devo-post-content em {
-  font-style: italic;
-}
-
 .devo-post-signature {
   margin-top: 26px;
   font-family: var(--sans);
@@ -983,7 +971,7 @@ img {
   letter-spacing: 0.06em;
 }
 
-/* “Entradas recientes” (abajo del post) */
+/* Entradas recientes */
 .devo-recent {
   max-width: 980px;
   margin: 34px auto 0;
@@ -1017,16 +1005,9 @@ img {
   text-decoration: underline;
 }
 
-/* OJO: aquí tu HTML usa de nuevo .devo-grid, pero queremos que en “recientes”
-   se vea en columnas (tipo Wix) y con media controlada */
 .devo-recent .devo-grid {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-}
-
-/* Card compacta para “recientes” */
-.devo-recent .devo-card {
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
 .devo-recent .devo-card-img {
@@ -1058,6 +1039,136 @@ img {
 }
 
 /* ==================================================
+   CALENDARIO
+   ================================================== */
+.calendar-block {
+  max-width: 980px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.cal-section-title {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.cal-section-sub {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: #444;
+  line-height: 1.9;
+}
+
+/* Banner hero (reutiliza .hero-frame) */
+.cal-hero {
+  max-width: 980px;
+  margin: 0 auto 26px;
+}
+
+.cal-hero .hero-frame {
+  height: clamp(220px, 34vh, 320px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
+}
+
+.cal-hero-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+}
+
+/* Card fechas (3 columnas) */
+.calendar-card {
+  max-width: 980px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.calendar-card-inner {
+  padding: 26px 22px 30px;
+}
+
+.cal-dates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 40px;
+  text-align: center;
+}
+
+.cal-date-title {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.cal-date-sub {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Actividades semanales */
+.weekly-grid {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.weekly-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 22px 18px 26px;
+  text-align: center;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.weekly-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.weekly-day {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.weekly-divider {
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 18px;
+  opacity: 0.8;
+}
+
+.weekly-event {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.8;
+  color: #222;
+}
+
+/* ==================================================
    FOOTER
    ================================================== */
 .site-footer {
@@ -1065,7 +1176,6 @@ img {
 }
 
 .site-footer-main {
-  background: indicate var(--dark);
   background: var(--dark);
   padding: 44px 0 34px;
 }
@@ -1171,9 +1281,10 @@ img {
 }
 
 /* ==================================================
-   RESPONSIVE
+   RESPONSIVE (GLOBAL)
    ================================================== */
 @media (max-width: 980px) {
+  /* Index cards */
   .home-cards {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1187,11 +1298,13 @@ img {
     height: 240px;
   }
 
+  /* Nosotros */
   .triple-grid {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1201,27 +1314,17 @@ img {
     display: none;
   }
 
+  /* Parallax off */
   .image-banner {
     background-attachment: scroll;
     height: 400px;
-  }
-
-  .hero-small {
-    font-size: 20px;
-  }
-
-  .hero-title {
-    font-size: clamp(34px, 7vw, 54px);
-  }
-
-  .page-hero-text {
-    font-size: 18px;
   }
 
   .page-hero {
     background-attachment: scroll;
   }
 
+  /* Strip hero */
   .strip-hero {
     height: 160px;
   }
@@ -1234,11 +1337,13 @@ img {
     font-size: 16px;
   }
 
+  /* About */
   .about-text {
     font-size: 15px;
     line-height: 1.9;
   }
 
+  /* Carrusel */
   .resources-carousel {
     padding: 60px 0;
   }
@@ -1274,7 +1379,7 @@ img {
     font-size: 22px;
   }
 
-  /* Post: padding y tipografía más compacta */
+  /* Devocional individual */
   .devo-card-body {
     padding: 18px 18px 22px;
   }
@@ -1284,12 +1389,38 @@ img {
     line-height: 1.9;
   }
 
-  /* Entradas recientes: a 1 columna para que no se aplaste */
+  /* Recientes */
   .devo-recent .devo-grid {
     grid-template-columns: 1fr;
   }
 
   .devo-recent .devo-card-img {
     height: 200px;
+  }
+
+  /* Calendario fechas */
+  .cal-dates {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .calendar-card-inner {
+    padding: 22px 16px 26px;
+  }
+
+  .cal-section-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .weekly-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .weekly-grid {
+    grid-template-columns: 1fr;
   }
 }
