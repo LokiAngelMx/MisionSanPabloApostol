@@ -55,6 +55,12 @@ img {
   margin: 0 auto;
 }
 
+/* Focus visible (accesibilidad) */
+:focus-visible {
+  outline: 3px solid rgba(123, 47, 47, 0.35);
+  outline-offset: 3px;
+}
+
 /* ==================================================
    HEADER (LOGO + NAV)
    ================================================== */
@@ -217,7 +223,7 @@ img {
 }
 
 /* ==================================================
-   INDEX: HERO
+   HERO (INDEX “VIEJO” - si lo sigues usando)
    ================================================== */
 .hero-wrap {
   padding: 14px 0;
@@ -275,6 +281,53 @@ img {
   margin: 0;
   letter-spacing: 0.01em;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+}
+
+/* ==================================================
+   PAGE HERO (NOSOTROS / RECURSOS / INDEX NUEVO)
+   ================================================== */
+.page-hero {
+  position: relative;
+  height: clamp(420px, 55vh, 560px);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.page-hero-inner {
+  position: relative;
+  max-width: 720px;
+  padding: 0 12px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 44px);
+  letter-spacing: 0.22em;
+  margin: 0 0 18px;
+  color: #111;
+}
+
+.page-hero-text {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
 }
 
 /* ==================================================
@@ -449,52 +502,8 @@ img {
 }
 
 /* ==================================================
-   NOSOTROS: HERO + 3 COLUMNAS
+   NOSOTROS: 3 COLUMNAS
    ================================================== */
-.page-hero {
-  position: relative;
-  height: clamp(420px, 55vh, 560px);
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.page-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.65);
-}
-
-.page-hero-inner {
-  position: relative;
-  max-width: 720px;
-  padding: 0 12px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.page-hero-title {
-  font-family: var(--serif);
-  font-size: clamp(34px, 4vw, 44px);
-  letter-spacing: 0.22em;
-  margin: 0 0 18px;
-  color: #111;
-}
-
-.page-hero-text {
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.7;
-  color: #333;
-  margin: 0;
-}
-
 .triple-info {
   padding: 70px 0 90px;
 }
@@ -547,7 +556,7 @@ img {
 }
 
 /* ==================================================
-   PÁGINAS (NUESTRA FE / NUESTRA IGLESIA / QUIÉNES SOMOS)
+   STRIP HERO (NUESTRA FE / IGLESIA / QUIÉNES SOMOS / DEVOCIONALES)
    ================================================== */
 .strip-hero {
   position: relative;
@@ -596,6 +605,10 @@ img {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
+/* ==================================================
+   CONTENEDOR DE CONTENIDO “LARGO”
+   (NUESTRA FE / IGLESIA / QUIÉNES SOMOS / DEVOCIONALES)
+   ================================================== */
 .faith-content {
   padding: 80px 0 100px;
 }
@@ -723,7 +736,7 @@ img {
   color: #fff;
 }
 
-/* Flechas: más área clickeable y mejor posición */
+/* Flechas: área clickeable correcta */
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -777,6 +790,274 @@ img {
 }
 
 /* ==================================================
+   DEVOCIONALES: LISTADO (devocionales.html)
+   ================================================== */
+.devo-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.devo-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.devo-link {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  min-height: 220px;
+  color: inherit;
+}
+
+.devo-media {
+  background: #eee;
+}
+
+.devo-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.devo-body {
+  padding: 22px 22px 18px;
+}
+
+.devo-meta {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.devo-dot {
+  margin: 0 6px;
+}
+
+.devo-title {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.25;
+  color: #111;
+}
+
+.devo-excerpt {
+  margin: 0 0 14px;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.devo-cta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.devo-link:hover .devo-title {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   DEVOCIONAL INDIVIDUAL (devocional-1.html, -2, etc.)
+   IMPORTANTÍSIMO:
+   - Estas clases existen en tu HTML del post
+   - Aquí les damos el look “bonito” y consistente
+   ================================================== */
+
+/* Barra superior con botón regresar */
+.post-topbar {
+  max-width: 980px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #222;
+}
+
+.post-back:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Card principal del post */
+.devo-card--full {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Imagen superior del post (controlamos altura para que NO se vea gigante) */
+.devo-card-img {
+  display: block;
+  width: 100%;
+  background: #eee;
+  overflow: hidden;
+}
+
+.devo-card--full .devo-card-img {
+  height: clamp(260px, 44vh, 420px);
+}
+
+.devo-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cuerpo del post */
+.devo-card-body {
+  padding: 20px 22px 24px;
+}
+
+.devo-card-meta {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.devo-card-sep {
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
+.devo-card-title {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.25;
+  color: #111;
+}
+
+.devo-card-title--post {
+  font-size: clamp(22px, 2.1vw, 30px);
+}
+
+/* Contenido del devocional: aquí arreglamos lo “pegado” y line-height */
+.devo-post-content {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2;
+  color: #222;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.devo-post-content p {
+  margin: 0 0 18px;
+}
+
+.devo-post-content em {
+  font-style: italic;
+}
+
+.devo-post-signature {
+  margin-top: 26px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: #444;
+  letter-spacing: 0.06em;
+}
+
+/* “Entradas recientes” (abajo del post) */
+.devo-recent {
+  max-width: 980px;
+  margin: 34px auto 0;
+}
+
+.devo-recent-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.devo-recent-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: #111;
+}
+
+.devo-recent-all {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.devo-recent-all:hover {
+  text-decoration: underline;
+}
+
+/* OJO: aquí tu HTML usa de nuevo .devo-grid, pero queremos que en “recientes”
+   se vea en columnas (tipo Wix) y con media controlada */
+.devo-recent .devo-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Card compacta para “recientes” */
+.devo-recent .devo-card {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.devo-recent .devo-card-img {
+  height: 170px;
+}
+
+.devo-card-link {
+  display: block;
+  padding: 16px 16px 18px;
+  color: inherit;
+}
+
+.devo-recent .devo-card-title {
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.devo-card-excerpt {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.devo-card-link:hover .devo-card-title {
+  text-decoration: underline;
+}
+
+/* ==================================================
    FOOTER
    ================================================== */
 .site-footer {
@@ -784,6 +1065,7 @@ img {
 }
 
 .site-footer-main {
+  background: indicate var(--dark);
   background: var(--dark);
   padding: 44px 0 34px;
 }
@@ -978,94 +1260,8 @@ img {
   .carousel-arrow.next {
     right: 6px;
   }
-}
 
-/* ==================================================
-   DEVOCIONALES: TARJETAS
-   ================================================== */
-
-.devo-grid {
-  max-width: 980px;
-  margin: 0 auto;
-  display: grid;
-  gap: 22px;
-}
-
-.devo-card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #fff;
-  overflow: hidden;
-}
-
-.devo-link {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  min-height: 220px;
-  color: inherit;
-}
-
-.devo-media {
-  background: #eee;
-}
-
-.devo-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.devo-body {
-  padding: 22px 22px 18px;
-}
-
-.devo-meta {
-  font-family: var(--sans);
-  font-size: 12px;
-  color: #666;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-}
-
-.devo-dot {
-  margin: 0 6px;
-}
-
-.devo-title {
-  margin: 0 0 12px;
-  font-family: var(--serif);
-  font-size: 26px;
-  line-height: 1.25;
-  color: #111;
-}
-
-.devo-excerpt {
-  margin: 0 0 14px;
-  font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.8;
-  color: #333;
-}
-
-.devo-cta {
-  display: inline-block;
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.devo-link:hover .devo-title {
-  text-decoration: underline;
-}
-
-.devo-link:focus-visible {
-  outline: 3px solid rgba(123, 47, 47, 0.35);
-  outline-offset: 3px;
-}
-
-/* Responsive */
-@media (max-width: 980px) {
+  /* Devocionales listado */
   .devo-link {
     grid-template-columns: 1fr;
   }
@@ -1076,5 +1272,24 @@ img {
 
   .devo-title {
     font-size: 22px;
+  }
+
+  /* Post: padding y tipografía más compacta */
+  .devo-card-body {
+    padding: 18px 18px 22px;
+  }
+
+  .devo-post-content {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  /* Entradas recientes: a 1 columna para que no se aplaste */
+  .devo-recent .devo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .devo-recent .devo-card-img {
+    height: 200px;
   }
 }
