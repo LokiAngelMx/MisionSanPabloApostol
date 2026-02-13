@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contacto | Misión San Pablo Apóstol</title>
+    <meta name="description"
+        content="Contacto de Misión San Pablo Apóstol. Escríbenos y encuentra nuestra ubicación." />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="icon" href="img/favicon.png" />
+</head>
+
+<body>
+
+    <!-- ==================================================
+       ENCABEZADO PRINCIPAL (LOGO + NAVEGACIÓN)
+       ================================================== -->
+    <header class="mspa-header">
+        <div class="container">
+
+            <div class="brand-center">
+                <img class="logo" src="img/logo.png" alt="Logo de Misión San Pablo Apóstol" />
+                <div class="brand-text">
+                    <div class="brand-top">Congregación Luterana Libre</div>
+                    <div class="brand-main">MISIÓN SAN PABLO APÓSTOL</div>
+                </div>
+            </div>
+
+            <nav class="pill-nav" aria-label="Navegación principal">
+                <a class="pill" href="index.html">HOME</a>
+
+                <div class="nav-drop">
+                    <a class="pill" href="nosotros.html" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
+                    <div class="drop-menu" role="menu" aria-label="Submenú Nosotros">
+                        <a href="nuestra-fe.html" role="menuitem">NUESTRA FE</a>
+                        <a href="nuestra-iglesia.html" role="menuitem">NUESTRA IGLESIA</a>
+                        <a href="quienes-somos.html" role="menuitem">¿QUIÉNES SOMOS?</a>
+                    </div>
+                </div>
+
+                <div class="nav-drop">
+                    <a class="pill" href="recursos.html" aria-haspopup="true" aria-expanded="false">RECURSOS</a>
+                    <div class="drop-menu" role="menu" aria-label="Submenú Recursos">
+                        <a href="devocionales.html" role="menuitem">Devocionales</a>
+                    </div>
+                </div>
+
+                <a class="pill" href="calendario.html">CALENDARIO</a>
+                <a class="pill active" href="contacto.html">CONTACTO</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ==================================================
+         HERO CONTACTO (tipo page-hero como index/nosotros)
+         Cambia la imagen a la que quieras
+         ================================================== -->
+        <section class="page-hero contact-hero" style="background-image: url('img/hero-contacto.jpg');">
+            <div class="page-hero-overlay"></div>
+
+            <div class="container">
+                <div class="page-hero-inner">
+                    <h1 class="page-hero-title">CONTACTO</h1>
+                    <p class="page-hero-text">
+                        ¿Tienes preguntas sobre nuestro ministerio? ¿Tienes alguna necesidad espiritual o motivo por el
+                        que quieras
+                        que oremos? No dudes en contactarnos.
+                        <br /><br />
+                        En “Misión San Pablo Apóstol” queremos conocerte para llevarte a los brazos del Señor.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+         CONTENIDO
+         ================================================== -->
+        <section class="contact-section">
+            <div class="container">
+
+                <div class="contact-card">
+                    <div class="contact-grid">
+
+                        <!-- MAPA -->
+                        <section class="contact-map" aria-label="Ubicación">
+                            <div class="contact-map-frame" role="application" aria-label="Mapa de ubicación">
+                                <!-- Reemplaza el src por tu embed real si quieres -->
+                                <iframe title="Mapa - Misión San Pablo Apóstol" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    src="https://www.google.com/maps?q=Misi%C3%B3n%20San%20Pablo%20Ap%C3%B3stol&output=embed">
+                                </iframe>
+                            </div>
+
+                            <div class="contact-mini">
+                                <p class="contact-mini-title">Misión San Pablo Apóstol</p>
+                                <p class="contact-mini-text">
+                                    Si vienes por primera vez, escríbenos y con gusto te orientamos.
+                                </p>
+
+                                <div class="contact-mini-links">
+                                    <a class="contact-mini-link" href="tel:+524772467436">Llamar</a>
+                                    <a class="contact-mini-link" href="mailto:sanpabloapostol.mision@gmail.com">Enviar
+                                        email</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- FORM -->
+                        <section class="contact-form" aria-label="Formulario de contacto">
+                            <h2 class="contact-form-title">Escríbenos</h2>
+                            <p class="contact-form-sub">
+                                Te respondemos lo antes posible.
+                            </p>
+
+                            <!-- Nota: sin backend no envía. Si ya tienes backend, agrega action/method -->
+                            <form class="form" action="#" method="post">
+                                <label class="field">
+                                    <span class="field-label">Nombre</span>
+                                    <input class="field-input" type="text" name="name" autocomplete="name" required />
+                                </label>
+
+                                <label class="field">
+                                    <span class="field-label">Email</span>
+                                    <input class="field-input" type="email" name="email" autocomplete="email"
+                                        required />
+                                </label>
+
+                                <label class="field">
+                                    <span class="field-label">Mensaje</span>
+                                    <textarea class="field-textarea" name="message" rows="6" required></textarea>
+                                </label>
+
+                                <button class="form-btn" type="submit">Enviar</button>
+                            </form>
+
+                            <div class="contact-direct">
+                                <p class="contact-direct-title">Contacto directo</p>
+                                <p class="contact-direct-text">
+                                    <strong>Tel:</strong> <a class="contact-direct-link" href="tel:+524772467436">477
+                                        246 7436</a><br />
+                                    <strong>Email:</strong>
+                                    <a class="contact-direct-link" href="mailto:sanpabloapostol.mision@gmail.com">
+                                        sanpabloapostol.mision@gmail.com
+                                    </a><br />
+                                    <a class="contact-direct-link" href="mailto:israelvfmexico@gmail.com">
+                                        israelvfmexico@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================================================
+       PIE DE PÁGINA (igual que el resto)
+       ================================================== -->
+    <footer class="site-footer">
+
+        <div class="site-footer-main">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <section class="footer-col footer-about">
+                        <h4 class="footer-title">NOSOTROS</h4>
+                        <p class="footer-text">
+                            En "Misión San Pablo Apóstol" somos una congregación luterana conservadora, confesional,
+                            libre y viviente.
+                            <br />Ven y conoce más de nosotros.
+                        </p>
+                    </section>
+
+                    <div class="footer-divider" aria-hidden="true"></div>
+
+                    <section class="footer-col footer-contact">
+                        <h4 class="footer-title">CONTACTO</h4>
+                        <p class="footer-text">
+                            <strong>Tel:</strong> <a class="footer-contact-item" href="tel:+524772467436">477 246
+                                7436</a>
+                            <br /><br />
+                            <strong>Email:</strong><br />
+                            <a class="footer-contact-item"
+                                href="mailto:sanpabloapostol.mision@gmail.com">sanpabloapostol.mision@gmail.com</a><br />
+                            <a class="footer-contact-item"
+                                href="mailto:israelvfmexico@gmail.com">israelvfmexico@gmail.com</a>
+                        </p>
+                    </section>
+
+                    <div class="footer-divider" aria-hidden="true"></div>
+
+                    <section class="footer-col footer-social">
+                        <h4 class="footer-title">NUESTRAS REDES</h4>
+
+                        <ul class="footer-social-list">
+                            <li>
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
+                                    <img src="img/icons/facebook.png" alt="Facebook" class="footer-social-icon" />
+                                    <span>Misión San Pablo Apóstol</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
+                                    <img src="img/icons/youtube.png" alt="YouTube" class="footer-social-icon" />
+                                    <span>Misión San Pablo Apóstol</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
+                                    <img src="img/icons/instagram.png" alt="Instagram" class="footer-social-icon" />
+                                    <span>@sanpabloapostol.mision</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="footer-social-item" href="#" target="_blank" rel="noopener">
+                                    <img src="img/icons/spotify.png" alt="Spotify" class="footer-social-icon" />
+                                    <span>"Meditando las Escrituras" Luterana Libre</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-text">
+                    © <span id="year"></span> • Misión San Pablo Apóstol
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
