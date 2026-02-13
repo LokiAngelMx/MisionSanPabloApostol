@@ -1,6 +1,3 @@
-/* ==================================================
-   VARIABLES
-   ================================================== */
 :root {
   --max: 1100px;
 
@@ -20,9 +17,7 @@
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* ==================================================
-   RESET / BASE
-   ================================================== */
+/* Base */
 * {
   box-sizing: border-box;
 }
@@ -55,15 +50,12 @@ img {
   margin: 0 auto;
 }
 
-/* Accesibilidad */
 :focus-visible {
   outline: 3px solid rgba(123, 47, 47, 0.35);
   outline-offset: 3px;
 }
 
-/* ==================================================
-   HEADER (LOGO + NAV)
-   ================================================== */
+/* Header + Nav */
 .mspa-header {
   background: var(--dark-2);
   padding: 18px 0 10px;
@@ -105,9 +97,6 @@ img {
   color: #ffffff;
 }
 
-/* ==================================================
-   NAVBAR + DROPDOWN
-   ================================================== */
 .pill-nav {
   display: flex;
   justify-content: center;
@@ -140,14 +129,13 @@ img {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Dropdown wrapper */
+/* Dropdown */
 .nav-drop {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-/* “Puente” invisible para evitar cierre al bajar el cursor */
 .nav-drop::after {
   content: "";
   position: absolute;
@@ -157,25 +145,21 @@ img {
   height: 14px;
 }
 
-/* Menú desplegable */
 .drop-menu {
   position: absolute;
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   min-width: 190px;
-
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-
   padding: 8px;
   display: none;
   z-index: 999;
 }
 
-/* Flechita */
 .drop-menu::before {
   content: "";
   position: absolute;
@@ -188,7 +172,6 @@ img {
   filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.12));
 }
 
-/* Items */
 .drop-menu a {
   display: block;
   padding: 9px 10px;
@@ -210,21 +193,17 @@ img {
   font-weight: 700;
 }
 
-/* Desktop hover */
 @media (hover: hover) and (pointer: fine) {
   .nav-drop:hover .drop-menu {
     display: block;
   }
 }
 
-/* Estado abierto por JS (móvil/click) */
 .nav-drop.open .drop-menu {
   display: block;
 }
 
-/* ==================================================
-   HERO (INDEX “VIEJO” - si lo sigues usando)
-   ================================================== */
+/* Hero (index viejo, si lo usas) */
 .hero-wrap {
   padding: 14px 0;
 }
@@ -283,18 +262,14 @@ img {
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
 }
 
-/* ==================================================
-   PAGE HERO (NOSOTROS / INDEX NUEVO)
-   ================================================== */
+/* Page hero */
 .page-hero {
   position: relative;
   height: clamp(420px, 55vh, 560px);
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -330,9 +305,7 @@ img {
   margin: 0;
 }
 
-/* ==================================================
-   INDEX: BIENVENIDA + CARDS
-   ================================================== */
+/* Home */
 .home-welcome {
   padding: 42px 0 70px;
 }
@@ -434,21 +407,17 @@ img {
   text-decoration: underline;
 }
 
-/* ==================================================
-   BANNER (IMAGEN FIJA)
-   ================================================== */
+/* Banner fijo */
 .image-banner {
   position: relative;
   width: 100%;
   height: 440px;
   margin-top: 24px;
   overflow: hidden;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -501,9 +470,7 @@ img {
   filter: brightness(0.95);
 }
 
-/* ==================================================
-   NOSOTROS: 3 COLUMNAS
-   ================================================== */
+/* Nosotros (3 columnas) */
 .triple-info {
   padding: 70px 0 90px;
 }
@@ -555,19 +522,15 @@ img {
   color: #555;
 }
 
-/* ==================================================
-   STRIP HERO (NUESTRA FE / IGLESIA / QUIÉNES SOMOS / DEVOCIONALES)
-   ================================================== */
+/* Strip hero */
 .strip-hero {
   position: relative;
   width: 100%;
   height: 180px;
   margin: 22px 0 0;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -605,9 +568,7 @@ img {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
-/* ==================================================
-   CONTENIDO “LARGO” (FE / IGLESIA / QUIÉNES SOMOS / DEVOCIONALES)
-   ================================================== */
+/* Contenido largo */
 .faith-content {
   padding: 80px 0 100px;
 }
@@ -636,7 +597,6 @@ img {
   margin-bottom: 18px;
 }
 
-/* Quiénes Somos (texto largo + logo) */
 .doc-block {
   max-width: 920px;
   margin: 0 auto;
@@ -668,9 +628,7 @@ img {
   height: auto;
 }
 
-/* ==================================================
-   RECURSOS: CARRUSEL
-   ================================================== */
+/* Carrusel */
 .resources-carousel {
   background: var(--accent);
   padding: 70px 0;
@@ -787,9 +745,7 @@ img {
   background: rgba(255, 255, 255, 0.95);
 }
 
-/* ==================================================
-   DEVOCIONALES: LISTADO (devocionales.html)
-   ================================================== */
+/* Devocionales (listado) */
 .devo-grid {
   max-width: 980px;
   margin: 0 auto;
@@ -866,9 +822,7 @@ img {
   text-decoration: underline;
 }
 
-/* ==================================================
-   DEVOCIONAL INDIVIDUAL (devocional-1.html, -2, etc.)
-   ================================================== */
+/* Devocional individual */
 .post-topbar {
   max-width: 980px;
   margin: 0 auto 14px;
@@ -895,13 +849,11 @@ img {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* Card principal */
 .devo-card--full {
   max-width: 980px;
   margin: 0 auto;
 }
 
-/* Imagen del post */
 .devo-card-img {
   display: block;
   width: 100%;
@@ -948,7 +900,6 @@ img {
   font-size: clamp(22px, 2.1vw, 30px);
 }
 
-/* Contenido */
 .devo-post-content {
   margin-top: 14px;
   font-family: var(--serif);
@@ -971,7 +922,6 @@ img {
   letter-spacing: 0.06em;
 }
 
-/* Entradas recientes */
 .devo-recent {
   max-width: 980px;
   margin: 34px auto 0;
@@ -1038,9 +988,7 @@ img {
   text-decoration: underline;
 }
 
-/* ==================================================
-   CALENDARIO
-   ================================================== */
+/* Calendario */
 .calendar-block {
   max-width: 980px;
   margin: 0 auto 34px;
@@ -1064,7 +1012,6 @@ img {
   line-height: 1.9;
 }
 
-/* Banner hero (reutiliza .hero-frame) */
 .cal-hero {
   max-width: 980px;
   margin: 0 auto 26px;
@@ -1085,7 +1032,6 @@ img {
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
 }
 
-/* Card fechas (3 columnas) */
 .calendar-card {
   max-width: 980px;
   margin: 0 auto;
@@ -1120,7 +1066,6 @@ img {
   line-height: 1.7;
 }
 
-/* Actividades semanales */
 .weekly-grid {
   margin-top: 34px;
   display: grid;
@@ -1168,9 +1113,192 @@ img {
   color: #222;
 }
 
-/* ==================================================
-   FOOTER
-   ================================================== */
+/* Contacto */
+.contact-hero .page-hero-inner {
+  max-width: 860px;
+}
+
+.contact-section {
+  padding: 70px 0 100px;
+}
+
+.contact-card {
+  max-width: 980px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 22px;
+  padding: 22px;
+  align-items: start;
+}
+
+.contact-map-frame {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #f2f2f2;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.contact-map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.contact-mini {
+  padding: 14px 0 0;
+}
+
+.contact-mini-title {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: #111;
+}
+
+.contact-mini-text {
+  margin: 0 0 12px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.85;
+  color: #444;
+}
+
+.contact-mini-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-mini-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(123, 47, 47, 0.3);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #fff;
+}
+
+.contact-mini-link:hover {
+  background: rgba(123, 47, 47, 0.04);
+}
+
+.contact-form {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  padding-left: 22px;
+}
+
+.contact-form-title {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.contact-form-sub {
+  margin: 0 0 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #444;
+  letter-spacing: 0.02em;
+}
+
+.field-input,
+.field-textarea {
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background: #fff;
+  padding: 10px 12px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #111;
+  outline: none;
+}
+
+.field-input:focus,
+.field-textarea:focus {
+  border-color: rgba(123, 47, 47, 0.55);
+  box-shadow: 0 0 0 3px rgba(123, 47, 47, 0.12);
+}
+
+.form-btn {
+  justify-self: end;
+  padding: 10px 22px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  filter: brightness(0.95);
+}
+
+.contact-direct {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-direct-title {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.contact-direct-text {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.9;
+  color: #333;
+}
+
+.contact-direct-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
 .site-footer {
   margin-top: 0;
 }
@@ -1280,11 +1408,8 @@ img {
   font-size: 12px;
 }
 
-/* ==================================================
-   RESPONSIVE (GLOBAL)
-   ================================================== */
+/* Responsive */
 @media (max-width: 980px) {
-  /* Index cards */
   .home-cards {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1298,13 +1423,11 @@ img {
     height: 240px;
   }
 
-  /* Nosotros */
   .triple-grid {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
-  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1314,7 +1437,6 @@ img {
     display: none;
   }
 
-  /* Parallax off */
   .image-banner {
     background-attachment: scroll;
     height: 400px;
@@ -1324,7 +1446,6 @@ img {
     background-attachment: scroll;
   }
 
-  /* Strip hero */
   .strip-hero {
     height: 160px;
   }
@@ -1337,13 +1458,11 @@ img {
     font-size: 16px;
   }
 
-  /* About */
   .about-text {
     font-size: 15px;
     line-height: 1.9;
   }
 
-  /* Carrusel */
   .resources-carousel {
     padding: 60px 0;
   }
@@ -1366,7 +1485,6 @@ img {
     right: 6px;
   }
 
-  /* Devocionales listado */
   .devo-link {
     grid-template-columns: 1fr;
   }
@@ -1379,7 +1497,6 @@ img {
     font-size: 22px;
   }
 
-  /* Devocional individual */
   .devo-card-body {
     padding: 18px 18px 22px;
   }
@@ -1389,7 +1506,6 @@ img {
     line-height: 1.9;
   }
 
-  /* Recientes */
   .devo-recent .devo-grid {
     grid-template-columns: 1fr;
   }
@@ -1398,7 +1514,6 @@ img {
     height: 200px;
   }
 
-  /* Calendario fechas */
   .cal-dates {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -1411,217 +1526,7 @@ img {
   .cal-section-title {
     font-size: 18px;
   }
-}
 
-@media (max-width: 1100px) {
-  .weekly-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .weekly-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==================================================
-   CONTACTO
-   ================================================== */
-
-/* Ajuste leve al hero para que el texto no se vea enorme */
-.contact-hero .page-hero-inner {
-  max-width: 860px;
-}
-
-.contact-section {
-  padding: 70px 0 100px;
-}
-
-/* Card contenedora */
-.contact-card {
-  max-width: 980px;
-  margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #fff;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-}
-
-/* Grid mapa + form */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 22px;
-  padding: 22px;
-  align-items: start;
-}
-
-/* MAPA */
-.contact-map-frame {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #f2f2f2;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-}
-
-.contact-map-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.contact-mini {
-  padding: 14px 0 0;
-}
-
-.contact-mini-title {
-  margin: 0 0 6px;
-  font-family: var(--serif);
-  font-size: 16px;
-  color: #111;
-}
-
-.contact-mini-text {
-  margin: 0 0 12px;
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.85;
-  color: #444;
-}
-
-.contact-mini-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.contact-mini-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(123, 47, 47, 0.3);
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: #fff;
-}
-
-.contact-mini-link:hover {
-  background: rgba(123, 47, 47, 0.04);
-}
-
-/* FORM */
-.contact-form {
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  padding-left: 22px;
-}
-
-.contact-form-title {
-  margin: 0 0 6px;
-  font-family: var(--serif);
-  font-size: 18px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #111;
-}
-
-.contact-form-sub {
-  margin: 0 0 16px;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: #444;
-  line-height: 1.8;
-}
-
-/* Inputs */
-.form {
-  display: grid;
-  gap: 12px;
-}
-
-.field {
-  display: grid;
-  gap: 6px;
-}
-
-.field-label {
-  font-family: var(--sans);
-  font-size: 12px;
-  color: #444;
-  letter-spacing: 0.02em;
-}
-
-.field-input,
-.field-textarea {
-  width: 100%;
-  border-radius: 0;
-  border: 1px solid rgba(0, 0, 0, 0.22);
-  background: #fff;
-  padding: 10px 12px;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: #111;
-  outline: none;
-}
-
-.field-input:focus,
-.field-textarea:focus {
-  border-color: rgba(123, 47, 47, 0.55);
-  box-shadow: 0 0 0 3px rgba(123, 47, 47, 0.12);
-}
-
-.form-btn {
-  justify-self: end;
-  padding: 10px 22px;
-  border: 0;
-  background: var(--accent);
-  color: #fff;
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.form-btn:hover {
-  filter: brightness(0.95);
-}
-
-/* Contacto directo */
-.contact-direct {
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.contact-direct-title {
-  margin: 0 0 8px;
-  font-family: var(--serif);
-  font-size: 14px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #111;
-}
-
-.contact-direct-text {
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.9;
-  color: #333;
-}
-
-.contact-direct-link:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 980px) {
   .contact-grid {
     grid-template-columns: 1fr;
     padding: 18px;
@@ -1642,4 +1547,25 @@ img {
   .contact-map-frame {
     aspect-ratio: 16 / 10;
   }
+}
+
+@media (max-width: 1100px) {
+  .weekly-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .weekly-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FE / IGLESIA: mismo “arranque” que QUIÉNES SOMOS */
+.faith-content.is-tight {
+  padding-top: 40px; /* antes 80px */
+}
+
+.faith-content.is-tight .faith-title {
+  margin-top: 0; /* antes 80px */
 }
