@@ -1,47 +1,47 @@
-// ==============================
-// NAV DROPDOWN (mobile click)
-// ==============================
+/* =====================================================
+   NAV DROPDOWN (mobile click behavior)
+===================================================== */
+
 document.querySelectorAll(".nav-drop > a.pill").forEach((trigger) => {
   trigger.addEventListener("click", (e) => {
-    const wrap = trigger.parentElement;
-    const menu = wrap.querySelector(".drop-menu");
+    const wrapper = trigger.parentElement;
+    const menu = wrapper.querySelector(".drop-menu");
     if (!menu) return;
 
-    // En desktop se usa hover; no bloqueamos la navegación
+    // En desktop dejamos que hover maneje el menú
     if (window.matchMedia("(hover: hover)").matches) return;
 
-    // Primer tap abre el menú, segundo tap navega
-    if (!wrap.classList.contains("open")) {
-      e.preventDefault();
+    const isOpen = wrapper.classList.contains("open");
 
-      document.querySelectorAll(".nav-drop").forEach((d) => {
-        d.classList.remove("open");
-        d.querySelector("a.pill")?.setAttribute("aria-expanded", "false");
-      });
+    // Cerrar todos antes de abrir uno nuevo
+    document.querySelectorAll(".nav-drop").forEach((drop) => {
+      drop.classList.remove("open");
+      drop.querySelector("a.pill")?.setAttribute("aria-expanded", "false");
+    });
 
-      wrap.classList.add("open");
+    if (!isOpen) {
+      e.preventDefault(); // Primer tap: solo abre
+      wrapper.classList.add("open");
       trigger.setAttribute("aria-expanded", "true");
-    } else {
-      wrap.classList.remove("open");
-      trigger.setAttribute("aria-expanded", "false");
-      // No prevenimos default aquí → navega al href
     }
+    // Segundo tap: navega normalmente
   });
 });
 
-// Cerrar al tocar fuera
+// Cerrar menú si se hace click fuera
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".nav-drop")) {
-    document.querySelectorAll(".nav-drop").forEach((d) => {
-      d.classList.remove("open");
-      d.querySelector("a.pill")?.setAttribute("aria-expanded", "false");
+    document.querySelectorAll(".nav-drop").forEach((drop) => {
+      drop.classList.remove("open");
+      drop.querySelector("a.pill")?.setAttribute("aria-expanded", "false");
     });
   }
 });
 
-// ==============================
-// CAROUSEL (autoplay + arrows + dots) - TRACK SLIDER
-// ==============================
+/* =====================================================
+   CAROUSEL (autoplay + arrows + dots)
+===================================================== */
+
 (() => {
   const carousel = document.querySelector("[data-carousel]");
   if (!carousel) return;
@@ -53,95 +53,96 @@ document.addEventListener("click", (e) => {
   const prevBtn =
     carousel.querySelector("[data-carousel-prev]") ||
     carousel.querySelector('[data-action="prev"]');
+
   const nextBtn =
     carousel.querySelector("[data-carousel-next]") ||
     carousel.querySelector('[data-action="next"]');
 
   if (!track || slides.length === 0) return;
 
-  let current = slides.findIndex((s) => s.classList.contains("is-active"));
+  let current = slides.findIndex((slide) =>
+    slide.classList.contains("is-active"),
+  );
   if (current < 0) current = 0;
 
   let timer = null;
   const INTERVAL_MS = 6000;
 
-  // Asegura layout tipo slider (por si tu CSS no lo tiene)
+  // Forzar comportamiento tipo slider
   track.style.display = "flex";
   track.style.willChange = "transform";
   track.style.transition = "transform 450ms ease";
-  slides.forEach((s) => {
-    s.style.minWidth = "100%";
-    s.style.flex = "0 0 100%";
+
+  slides.forEach((slide) => {
+    slide.style.minWidth = "100%";
+    slide.style.flex = "0 0 100%";
   });
 
-  function paint() {
-    // Mover track
+  function updateUI() {
     track.style.transform = `translateX(-${current * 100}%)`;
 
-    // Clases (por si también quieres estilos con is-active)
-    slides.forEach((s, i) => s.classList.toggle("is-active", i === current));
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === current));
+    slides.forEach((slide, i) =>
+      slide.classList.toggle("is-active", i === current),
+    );
+
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === current));
   }
 
-  function setActive(index) {
+  function goTo(index) {
     current = (index + slides.length) % slides.length;
-    paint();
+    updateUI();
   }
 
   function next() {
-    setActive(current + 1);
+    goTo(current + 1);
   }
 
   function prev() {
-    setActive(current - 1);
+    goTo(current - 1);
   }
 
-  function start() {
-    stop();
+  function startAutoplay() {
+    stopAutoplay();
     timer = window.setInterval(next, INTERVAL_MS);
   }
 
-  function stop() {
-    if (timer) window.clearInterval(timer);
+  function stopAutoplay() {
+    if (timer) clearInterval(timer);
     timer = null;
   }
 
   // Flechas
-  if (prevBtn) {
-    prevBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      prev();
-      start();
-    });
-  }
+  prevBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    prev();
+    startAutoplay();
+  });
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      next();
-      start();
-    });
-  }
+  nextBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    next();
+    startAutoplay();
+  });
 
   // Dots
   dots.forEach((dot) => {
     dot.addEventListener("click", (e) => {
       e.preventDefault();
-      const idx = Number(dot.getAttribute("data-carousel-dot"));
-      if (!Number.isNaN(idx)) {
-        setActive(idx);
-        start();
+      const index = Number(dot.dataset.carouselDot);
+      if (!Number.isNaN(index)) {
+        goTo(index);
+        startAutoplay();
       }
     });
   });
 
-  // Pausa al hover / focus
-  carousel.addEventListener("mouseenter", stop);
-  carousel.addEventListener("mouseleave", start);
-  carousel.addEventListener("focusin", stop);
-  carousel.addEventListener("focusout", start);
+  // Pausar al interactuar
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("mouseleave", startAutoplay);
+  carousel.addEventListener("focusin", stopAutoplay);
+  carousel.addEventListener("focusout", startAutoplay);
 
   // Init
-  paint();
-  start();
+  updateUI();
+  startAutoplay();
 })();
